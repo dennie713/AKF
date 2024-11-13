@@ -16,8 +16,8 @@ if __name__ == "__main__":
     ## 量測半徑
     r = 11.6287
     ## 讀取檔案 "D:\ASUS_program_code\規格測試\有線\IPS650_G50_motion.txt"
-    path1 = ['D:/ASUS_program_code/規格測試\有線\IPS650_G50_motion_1.txt'] #馬達資料.txt路徑
-    path2 = ['D:/ASUS_program_code/規格測試\有線\IPS650_G50_mouse_1.txt']  #滑鼠資料.txt路徑
+    path1 = ['data/IPS650_G50_motion.txt'] #馬達資料.txt路徑
+    path2 = ['data/IPS650_G50_mouse.txt']  #滑鼠資料.txt路徑
     # path1 = ['IPS300_G30_F_motion.txt'] #馬達資料.txt路徑
     # path2 = ['IPS300_G30_F_mouse.txt']  #滑鼠資料.txt路徑
     
@@ -32,9 +32,9 @@ if __name__ == "__main__":
     filtered_Pos = zero_phase_filter.zero_phase_filter(3, 17, Pos)
     filtered_PosCmd = zero_phase_filter.zero_phase_filter(3, 50, PosCmd)
     filtered_mouse_real_Pos = zero_phase_filter.zero_phase_filter(3, 20, mouse_real_Pos)
-    # Pos = filtered_Pos
-    # PosCmd = filtered_PosCmd
-    # mouse_real_Pos = filtered_mouse_real_Pos
+    Pos = filtered_Pos
+    PosCmd = filtered_PosCmd
+    mouse_real_Pos = filtered_mouse_real_Pos
 
     ## CFD 速度&加速度
     Pos_CFD_est, Vel_CFD_est, Acc_CFD_est = CFD.CFD(Pos) 

@@ -7,8 +7,8 @@ import sys
 import mousedata_add,  ImportData
 import Cal, CFD, KF_v2, zero_phase_filter, LAE
 
-path1 = ['D:\ASUS_program_code/規格測試/有線/IPS650_G50_motion_1.txt'] #馬達資料.txt路徑
-path2 = ['D:\ASUS_program_code/規格測試/有線/IPS650_G50_mouse_1.txt']  #滑鼠資料.txt路徑
+path1 = ['IPS650_G50_motion.txt'] #馬達資料.txt路徑
+path2 = ['IPS650_G50_mouse.txt']  #滑鼠資料.txt路徑
 # path1 = ['IPS300_G30_F_motion.txt'] #馬達資料.txt路徑
 # path2 = ['IPS300_G30_F_mouse.txt']  #滑鼠資料.txt路徑
 # path1 = ['D:\ASUS_program_code\控制台增強\WIRELESS\WIRELESS/1600/force\IPS500_G10_motion_1.txt'] #馬達資料.txt路徑
@@ -115,6 +115,8 @@ variance3 = np.var(dev3)
 print("Pos Variance:",variance1)
 print("Vel Variance:",variance2)
 print("acc Variance:",variance3)
+
+print("acc variance :", np.var(AccCmd))
 # 變藝術
 #PosCmd = 5501 , Pos = 5501
 #VelCmd = 289 , Vel = 277
